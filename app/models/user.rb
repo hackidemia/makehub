@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :projects, inverse_of: :user, dependent: :destroy
 
+  validates_presence_of :provider, :uid, :email, :name
+
   def self.find_or_create_from_omniauth(data)
     user = where(provider: data["provider"], uid: data["uid"]).first_or_initialize
     user.name  = data["info"]["name"] if data["info"]["name"]
