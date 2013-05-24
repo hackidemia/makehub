@@ -15,5 +15,5 @@
   <%= @material.photo_url %>
 </p>
 
-<%= link_to 'Edit', edit_material_path(@material) %> |
-<%= link_to 'Back', materials_path %>
+<%= link_to 'Edit', edit_project_material_path(@project, @material) %> |
+<%= link_to 'Back', project_materials_path(@project) %>

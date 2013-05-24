@@ -1,10 +1,11 @@
 class StepsController < ApplicationController
+  before_action :set_project
   before_action :set_step, only: [:show, :edit, :update, :destroy]
 
   # GET /steps
   # GET /steps.json
   def index
-    @steps = Step.all
+    @steps = @project.steps.all
   end
 
   # GET /steps/1
@@ -14,7 +15,7 @@ class StepsController < ApplicationController
 
   # GET /steps/new
   def new
-    @step = Step.new
+    @step = @project.steps.new
   end
 
   # GET /steps/1/edit
@@ -24,11 +25,13 @@ class StepsController < ApplicationController
   # POST /steps
   # POST /steps.json
   def create
-    @step = Step.new(step_params)
+    @step = @project.steps.new(step_params)
+    @project.steps << @step
 
     respond_to do |format|
       if @step.save
-        format.html { redirect_to @step, notice: 'Step was successfully created.' }
+        @project.save
+        format.html { redirect_to project_step_path(@project, @step), notice: 'Step was successfully created.' }
         format.json { render action: 'show', status: :created, location: @step }
       else
         format.html { render action: 'new' }
@@ -42,7 +45,7 @@ class StepsController < ApplicationController
   def update
     respond_to do |format|
       if @step.update(step_params)
-        format.html { redirect_to @step, notice: 'Step was successfully updated.' }
+        format.html { redirect_to project_step_path(@project, @step), notice: 'Step was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -56,19 +59,22 @@ class StepsController < ApplicationController
   def destroy
     @step.destroy
     respond_to do |format|
-      format.html { redirect_to steps_url }
+      format.html { redirect_to project_steps_url(@project) }
       format.json { head :no_content }
     end
   end
 
   private
+    def set_project
+      @project = Project.find(params[:project_id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_step
-      @step = Step.find(params[:id])
+      @step = @project.steps.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def step_params
-      params.require(:step).permit(:name, :content, :project_id)
+      params.require(:step).permit(:name, :content)
     end
 end

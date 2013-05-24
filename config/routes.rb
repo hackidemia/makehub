@@ -1,14 +1,12 @@
 Makehub::Application.routes.draw do
-
   get "welcome/index"
-
-  resources :materials
 
   resources :media
 
-  resources :steps
-
-  resources :projects
+  resources :projects do
+    resources :steps
+    resources :materials
+  end
 
   resources :users
   get '/auth/google_oauth2/callback' => 'sessions#create'

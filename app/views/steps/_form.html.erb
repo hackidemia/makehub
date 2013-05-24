@@ -1,4 +1,4 @@
-<%= form_for(@step) do |f| %>
+<%= form_for([@project, @step]) do |f| %>
   <% if @step.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@step.errors.count, "error") %> prohibited this step from being saved:</h2>
@@ -18,10 +18,6 @@
   <div class="field">
     <%= f.label :content %><br>
     <%= f.text_area :content %>
-  </div>
-  <div class="field">
-    <%= f.label :project_id %><br>
-    <%= f.number_field :project_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

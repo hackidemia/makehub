@@ -18,9 +18,9 @@
         <td><%= material.name %></td>
         <td><%= material.url %></td>
         <td><%= material.photo_url %></td>
-        <td><%= link_to 'Show', material %></td>
-        <td><%= link_to 'Edit', edit_material_path(material) %></td>
-        <td><%= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', project_material_path(@project, material) %></td>
+        <td><%= link_to 'Edit', edit_project_material_path(@project, material) %></td>
+        <td><%= link_to 'Destroy', project_materials_path(@project, material), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Material', new_material_path %>
+<%= link_to 'New Material', new_project_material_path(@project) %>

@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @material %> |
-<%= link_to 'Back', materials_path %>
+<%= link_to 'Show', project_material_path(@project, @material) %> |
+<%= link_to 'Back', project_materials_path(@project) %>

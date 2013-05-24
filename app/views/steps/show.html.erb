@@ -15,5 +15,5 @@
   <%= @step.project_id %>
 </p>
 
-<%= link_to 'Edit', edit_step_path(@step) %> |
-<%= link_to 'Back', steps_path %>
+<%= link_to 'Edit', edit_project_step_path(@project, @step) %> |
+<%= link_to 'Back', project_steps_path(@project) %>
