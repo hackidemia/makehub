@@ -1,4 +1,6 @@
 Makehub::Application.routes.draw do
+  resources :media
+
   resources :steps
 
   resources :projects
