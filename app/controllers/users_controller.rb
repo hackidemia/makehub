@@ -61,6 +61,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def omniauth_callback
+    @gmail_account = current_user.gmail_accounts.from_omniauth(request.env["omniauth.auth"])
+    if @gmail_account.save then
+      MailDownloaderWorker.perform_async(@gmail_account.id, true)
+      render :linked_successfully
+    else
+      redirect_to gmail_accounts_path error_linking: true
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
