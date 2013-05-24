@@ -21,13 +21,13 @@ ActiveRecord::Schema.define(version: 20130524220254) do
     t.datetime "updated_at"
   end
 
-  create_table "materials_steps", force: true do |t|
+  create_table "materials_projects", force: true do |t|
     t.integer "material_id", null: false
-    t.integer "step_id",     null: false
+    t.integer "project_id",  null: false
   end
 
-  add_index "materials_steps", ["material_id", "step_id"], name: "index_materials_steps_on_material_id_and_step_id", unique: true
-  add_index "materials_steps", ["step_id", "material_id"], name: "index_materials_steps_on_step_id_and_material_id", unique: true
+  add_index "materials_projects", ["material_id", "project_id"], name: "index_materials_projects_on_material_id_and_project_id", unique: true
+  add_index "materials_projects", ["project_id", "material_id"], name: "index_materials_projects_on_project_id_and_material_id", unique: true
 
   create_table "media", force: true do |t|
     t.string   "url"
