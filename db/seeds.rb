@@ -45,3 +45,44 @@ steps = project.steps.create([
     content: 'PROFIT'
   },
 ])
+
+
+user2 = User.where(
+  name: 'Regular Hacker',
+  email: 'regul@arhack.er',
+  provider: 'bestprovideroftheworld',
+  uid: 'secret456'
+).first_or_create
+
+project2 = user2.projects.create(
+  name: 'Raspberry-Car',
+  description: 'Create your own car, with the power of raspberry pi.'
+)
+
+materials2 = project2.materials.create([
+  {
+    name: 'Car'
+  },
+  {
+    name: 'Raspberry Pi'
+  }
+])
+
+step2s = project2.steps.create([
+  {
+    name: 'Step 1',
+    content: 'Arduino the Prepar.'
+  },
+  {
+    name: 'Step 2',
+    content: 'Robot the Lorem Ipsum..'
+  },
+  {
+    name: 'Step 3',
+    content: 'Hack the matrix'
+  },
+  {
+    name: 'Step 4',
+    content: 'PROFITssss!!'
+  },
+])
