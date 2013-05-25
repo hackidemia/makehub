@@ -25,14 +25,11 @@
 
 <body>
 
-<% if signed_in? %>
-  Hi <%= current_user.name %>
-  <%= link_to "Sign Out", signout_path, method: :delete %>
-<% else %>
-  <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
-<% end %>
+<%= render 'layouts/navigation' %>
 
-<%= yield %>
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
