@@ -16,6 +16,7 @@ class StepsController < ApplicationController
   # GET /steps/new
   def new
     @step = @project.steps.new
+    authorize_action_for(@step)
   end
 
   # GET /steps/1/edit
@@ -26,6 +27,7 @@ class StepsController < ApplicationController
   # POST /steps.json
   def create
     @step = @project.steps.new(step_params)
+    authorize_action_for(@step)
     @project.steps << @step
 
     respond_to do |format|
@@ -71,6 +73,7 @@ class StepsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_step
       @step = @project.steps.find(params[:id])
+      authorize_action_for(@step)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

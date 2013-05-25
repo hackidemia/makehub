@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+    authorize_action_for(@project)
   end
 
   # GET /projects/1/edit
@@ -25,6 +26,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    authorize_action_for(@project)
 
     respond_to do |format|
       if @project.save
@@ -65,10 +67,11 @@ class ProjectsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_project
       @project = Project.find(params[:id])
+      authorize_action_for(@project)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:name, :description, :user_id)
+      params.require(:project).permit(:name, :description)
     end
 end

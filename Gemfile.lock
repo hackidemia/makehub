@@ -27,6 +27,8 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.9)
+    authority (2.5.0)
+      rails (>= 3.0.0)
     builder (3.1.4)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
@@ -131,6 +133,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  authority
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.0.1)
   jquery-rails

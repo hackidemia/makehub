@@ -18,9 +18,9 @@
         <td><%= step.name %></td>
         <td><%= step.content %></td>
         <td><%= step.project_id %></td>
-        <td><%= link_to 'Show', project_step_path(@project, step) %></td>
-        <td><%= link_to 'Edit', edit_project_step_path(@project, step) %></td>
-        <td><%= link_to 'Destroy', project_step_path(@project, step), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', project_step_path(@project, step) if can_read?(step) %></td>
+        <td><%= link_to 'Edit', edit_project_step_path(@project, step) if can_update?(step) %></td>
+        <td><%= link_to 'Destroy', project_step_path(@project, step), method: :delete, data: { confirm: 'Are you sure?' } if can_delete?(step) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Step', new_project_step_path(@project) %>
+<%= link_to 'New Step', new_project_step_path(@project) if can_create?(@project.steps.new) %>

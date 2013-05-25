@@ -44,6 +44,10 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# we use omniauth to login with google or whatever that uses OAuth or similar
 gem 'omniauth'
 gem "omniauth-google-oauth2"
 
+# we use authority to limit what a user can do, kind of like CanCan.
+# https://github.com/nathanl/authority
+gem 'authority'
