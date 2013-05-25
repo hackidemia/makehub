@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<% if current_user %>
+<% if signed_in? %>
   Hi <%= current_user.name %>
   <%= link_to "Sign Out", signout_path, method: :delete %>
 <% else %>
