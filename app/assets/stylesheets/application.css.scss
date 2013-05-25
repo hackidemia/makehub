@@ -63,3 +63,30 @@ $fontSizeSmall: .75em;
   padding-top: 3em;
   text-align: center;
 }
+
+.project-meta {
+  margin-bottom: 1.5em;
+}
+
+.project-steps ol {
+  list-style: none;
+  margin: 0;
+}
+
+.project-steps li {
+  position: relative;
+  width: 18em;
+  min-height: 3em;
+  padding: 1em 1em 1em 2.75em;
+  background: #EEE;
+  margin-bottom: 1.25em;
+}
+
+.project-steps .step-number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 3em;
+  font-weight: bold;
+}
