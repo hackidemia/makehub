@@ -1,31 +1,33 @@
-<h1>Listing steps</h1>
+<div class="container">
+  <h1>Listing steps</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Content</th>
-      <th>Project</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @steps.each do |step| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= step.name %></td>
-        <td><%= step.content %></td>
-        <td><%= step.project_id %></td>
-        <td><%= link_to 'Show', project_step_path(@project, step) if can_read?(step) %></td>
-        <td><%= link_to 'Edit', edit_project_step_path(@project, step) if can_update?(step) %></td>
-        <td><%= link_to 'Destroy', project_step_path(@project, step), method: :delete, data: { confirm: 'Are you sure?' } if can_delete?(step) %></td>
+        <th>Name</th>
+        <th>Content</th>
+        <th>Project</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @steps.each do |step| %>
+        <tr>
+          <td><%= step.name %></td>
+          <td><%= step.content %></td>
+          <td><%= step.project_id %></td>
+          <td><%= link_to 'Show', project_step_path(@project, step) if can_read?(step) %></td>
+          <td><%= link_to 'Edit', edit_project_step_path(@project, step) if can_update?(step) %></td>
+          <td><%= link_to 'Destroy', project_step_path(@project, step), method: :delete, data: { confirm: 'Are you sure?' } if can_delete?(step) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Step', new_project_step_path(@project) if can_create?(@project.steps.new) %>
+  <br>
+
+  <%= link_to 'New Step', new_project_step_path(@project) if can_create?(@project.steps.new) %>
+</div>

@@ -1,29 +1,31 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @media_object.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @media_object.name %>
+  </p>
 
-<p>
-  <strong>Url:</strong>
-  <%= @media_object.url %>
-</p>
+  <p>
+    <strong>Url:</strong>
+    <%= @media_object.url %>
+  </p>
 
-<p>
-  <strong>Image Url:</strong>
-  <%= @media_object.image_url %>
-</p>
+  <p>
+    <strong>Image Url:</strong>
+    <%= @media_object.image_url %>
+  </p>
 
-<p>
-  <strong>Snippet:</strong>
-  <%= @media_object.snippet %>
-</p>
+  <p>
+    <strong>Snippet:</strong>
+    <%= @media_object.snippet %>
+  </p>
 
-<p>
-  <strong>Step:</strong>
-  <%= @media_object.step_id %>
-</p>
+  <p>
+    <strong>Step:</strong>
+    <%= @media_object.step_id %>
+  </p>
 
-<%= link_to 'Edit', edit_media_object_path(@media_object) %> |
-<%= link_to 'Back', media_objects_path %>
+  <%= link_to 'Edit', edit_media_object_path(@media_object) %> |
+  <%= link_to 'Back', media_objects_path %>
+</div>

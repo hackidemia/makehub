@@ -1,33 +1,35 @@
-<h1>Listing projects</h1>
+<div class="container">
+  <h1>Listing projects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= project.name %></td>
-        <td><%= project.description %></td>
-        <td><%= project.user_id %></td>
-        <td><%= link_to 'Show', project if can_read?(project) %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) if can_update?(project) %></td>
-        <td><%= link_to 'Fork', fork_project_path(project), method: :post, data: { confirm: 'Are you sure?' } if can_fork?(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } if can_delete?(project) %></td>
+        <th>Name</th>
+        <th>Description</th>
+        <th>User</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @projects.each do |project| %>
+        <tr>
+          <td><%= project.name %></td>
+          <td><%= project.description %></td>
+          <td><%= project.user_id %></td>
+          <td><%= link_to 'Show', project if can_read?(project) %></td>
+          <td><%= link_to 'Edit', edit_project_path(project) if can_update?(project) %></td>
+          <td><%= link_to 'Fork', fork_project_path(project), method: :post, data: { confirm: 'Are you sure?' } if can_fork?(project) %></td>
+          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } if can_delete?(project) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Project', new_project_path if can_create?(Project) %>
+  <br>
+
+  <%= link_to 'New Project', new_project_path if can_create?(Project) %>
+</div>

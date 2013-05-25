@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @material.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @material.name %>
+  </p>
 
-<p>
-  <strong>Url:</strong>
-  <%= @material.url %>
-</p>
+  <p>
+    <strong>Url:</strong>
+    <%= @material.url %>
+  </p>
 
-<p>
-  <strong>Photo url:</strong>
-  <%= @material.photo_url %>
-</p>
+  <p>
+    <strong>Photo url:</strong>
+    <%= @material.photo_url %>
+  </p>
 
-<%= link_to 'Edit', edit_project_material_path(@project, @material) %> |
-<%= link_to 'Back', project_materials_path(@project) %>
+  <%= link_to 'Edit', edit_project_material_path(@project, @material) %> |
+  <%= link_to 'Back', project_materials_path(@project) %>
+</div>
