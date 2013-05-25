@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Url</th>
       <th>Step</th>
       <th></th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @media.each do |medium| %>
       <tr>
+        <td><%= medium.name %></td>
         <td><%= medium.url %></td>
         <td><%= medium.step_id %></td>
         <td><%= link_to 'Show', medium %></td>

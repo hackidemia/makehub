@@ -12,7 +12,7 @@ class Project < ActiveRecord::Base
   def fork(new_user_id)
     # so we can pass a User object
     new_user_id = new_user_id.id if new_user_id.respond_to?(:id)
-    
+
     new_project = self.dup
     new_project.user_id      = new_user_id
     new_project.material_ids = material_ids
