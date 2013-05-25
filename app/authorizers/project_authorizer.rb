@@ -4,7 +4,12 @@ class ProjectAuthorizer < ApplicationAuthorizer
   def self.readable_by?(user)
     true
   end
+  # we only want to create projects if the user is logged in
   def self.creatable_by?(user)
+    not user.new_record?
+  end
+  # any registered user can fork any project
+  def self.forkable_by?(user)
     not user.new_record?
   end
 

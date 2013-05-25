@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :fork]
 
   # GET /projects
   # GET /projects.json
@@ -60,6 +60,20 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to projects_url }
       format.json { head :no_content }
+    end
+  end
+  
+  def fork
+    @new_project = @project.fork(current_user)
+    
+    # maybe we should add some kind of validation
+    # for the time being we just assume everything went fine.
+    respond_to do |format|
+      format.html { redirect_to @new_project, notice: 'Project sucessfully forked!' }
+      format.json do
+        @project = @new_project
+        render :show
+      end
     end
   end
 

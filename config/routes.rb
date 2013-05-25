@@ -4,6 +4,9 @@ Makehub::Application.routes.draw do
   resources :media
 
   resources :projects do
+    member do
+      post :fork
+    end
     resources :steps
     resources :materials
   end

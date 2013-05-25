@@ -9,6 +9,7 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -20,6 +21,7 @@
         <td><%= project.user_id %></td>
         <td><%= link_to 'Show', project if can_read?(project) %></td>
         <td><%= link_to 'Edit', edit_project_path(project) if can_update?(project) %></td>
+        <td><%= link_to 'Fork', fork_project_path(project), method: :post, data: { confirm: 'Are you sure?' } if can_fork?(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } if can_delete?(project) %></td>
       </tr>
     <% end %>

@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
 
-  delegate :can_read?, :can_create?, :can_update?, :can_delete?, to: :current_user
-  helper_method :can_read?, :can_create?, :can_update?, :can_delete?
+  delegate :can_read?, :can_create?, :can_update?, :can_delete?, :can_fork?, to: :current_user
+  helper_method :can_read?, :can_create?, :can_update?, :can_delete?, :can_fork?
 
   private
     def current_user

@@ -38,7 +38,8 @@ Authority.configure do |config|
     :create  => 'create',
     :edit    => 'update',
     :update  => 'update',
-    :destroy => 'delete'
+    :destroy => 'delete',
+    :fork    => 'fork'
   }
 
 
@@ -61,7 +62,8 @@ Authority.configure do |config|
     :create => 'creatable',
     :read   => 'readable',
     :update => 'updatable',
-    :delete => 'deletable'
+    :delete => 'deletable',
+    :fork   => 'forkable'
   }
 
   # LOGGER
