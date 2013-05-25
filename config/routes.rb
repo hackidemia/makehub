@@ -8,7 +8,7 @@ Makehub::Application.routes.draw do
     resources :materials
   end
 
-  resources :users
+  resources :users, except: [:new, :create]
   get '/auth/google_oauth2/callback' => 'sessions#create'
   delete "sessions/destroy" => 'sessions#destroy', as: :signout
 
