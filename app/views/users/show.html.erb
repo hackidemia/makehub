@@ -20,5 +20,5 @@
   <%= @user.uid %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_user_path(@user) if can_update?(@user) %> |
 <%= link_to 'Back', users_path %>

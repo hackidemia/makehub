@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   # with Authority we control permissions. (i.e. `creatable_by?(user)`)
   # Check out /app/authorizers or read https://github.com/nathanl/authority
   include Authority::UserAbilities
+  include Authority::Abilities
 
   def self.find_or_create_from_omniauth(data)
     user = where(provider: data["provider"], uid: data["uid"]).first_or_initialize

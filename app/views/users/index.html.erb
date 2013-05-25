@@ -20,14 +20,11 @@
         <td><%= user.email %></td>
         <td><%= user.provider %></td>
         <td><%= user.uid %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user if can_read?(user) %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) if can_update?(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } if can_delete?(user) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New User', new_user_path %>
