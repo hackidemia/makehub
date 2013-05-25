@@ -12,8 +12,54 @@
  *= require_tree .
  */
 
+
 $white: #fff;
+$green: green;
+$grey: #777;
+$darkGrey: #333;
+
+$fontSizeNormal: 1em;
+$fontSizeSmall: .75em;
+
 
 .hck-new-project-link {
-	background-color: $white;
+  background-color: $white;
+}
+
+.hck-container {
+  min-height: 50em;
+  padding-top: 2.5em;
+}
+
+.hck-masthead {
+  color: $white;
+  background: $green url() 0 0 no-repeat;
+}
+
+.hck-jumbotron {
+  background: url(http://lorempixel.com/1600/400/technics/4/) 0 0 no-repeat;
+  background-size: cover;
+  height: 400px;
+  padding-top: 50px;
+  text-align: center;
+  text-shadow: 0px 2px 3px $grey;
+
+  h1 {
+    font-size: 120px;
+    line-height: 140px;
+  }
+
+  p {
+    font-size: $fontSizeNormal * 3;
+  }
+}
+
+.hck-mastfoot {
+  background-color: $grey;
+  color: $white;
+  font-size: $fontSizeSmall;
+  height: 8em;
+  margin-top: 2.5em;
+  padding-top: 3em;
+  text-align: center;
 }
