@@ -1,5 +1,29 @@
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
 <div class="hck-newest-projects">
-	HERE!
+  <h3>Latest Project Actions</h3>
+  <% @latest_projects.each do |project| %>
+    <% action = (project.created_at == project.updated_at) ? 'created' : 'updated' %>
+    <% user = project.user %>
+    <div>
+      <%= link_to project.name, project_path(project) %> 
+      <%= action %> by 
+      <%= link_to user.name, user_path(user) %>
+    </div>
+
+    <div>
+      <%= "#{user.name} has #{user.projects.size} projects" %>
+    </div>
+
+    <div>
+      <%= "Project description: #{project.description}" %>
+    </div>
+
+    <% if action == "updated" %>
+      <div>
+        <%= "Number of steps: #{project.steps.size}" %>
+      </div>
+    <% end %>
+    <br>
+  <% end %>
 </div>
