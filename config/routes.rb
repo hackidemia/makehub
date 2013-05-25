@@ -1,5 +1,6 @@
 Makehub::Application.routes.draw do
   get "welcome/index"
+  get "me/projects" => 'me#index'
 
   resources :media
 
@@ -11,7 +12,9 @@ Makehub::Application.routes.draw do
     resources :materials
   end
 
-  resources :users, except: [:new, :create]
+  resources :users, except: [:new, :create] do
+    resources :projects
+  end
   get '/auth/google_oauth2/callback' => 'sessions#create'
   delete "sessions/destroy" => 'sessions#destroy', as: :signout
 
