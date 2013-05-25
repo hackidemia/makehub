@@ -7,7 +7,30 @@
 
 <div class="container hck-container">
   <section class="hck-newest-projects">
-    HERE!
+    <h2>Latest Project Actions</h2>
+    <% @latest_projects.each do |project| %>
+      <% action = (project.created_at == project.updated_at) ? 'created' : 'updated' %>
+      <% user = project.user %>
+      <div>
+        <%= link_to project.name, project_path(project) %>
+        <%= action %> by
+        <%= link_to user.name, user_path(user) %>
+      </div>
+
+      <div>
+        <%= "#{user.name} has #{user.projects.size} projects" %>
+      </div>
+
+      <div>
+        <%= "Project description: #{project.description}" %>
+      </div>
+
+      <% if action == "updated" %>
+        <div>
+          <%= "Number of steps: #{project.steps.size}" %>
+        </div>
+      <% end %>
+      <br>
+    <% end %>
   </section>
 </div>
-
