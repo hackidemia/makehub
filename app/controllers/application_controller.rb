@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   private
     def current_user
       # comment this line if you want to be able to log-in in development.
-      return @current_user ||= User.first if Rails.env.development?
+      #return @current_user ||= User.first if Rails.env.development?
 
       if session[:user_id] then
         @current_user ||= User.find(session[:user_id])

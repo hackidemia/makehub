@@ -2,7 +2,7 @@ Makehub::Application.routes.draw do
   get "welcome/index"
   get "me/projects" => 'me#index'
 
-  resources :media
+  resources :media_objects
 
   resources :projects do
     member do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130525125534) do
+ActiveRecord::Schema.define(version: 20130525141120) do
 
   create_table "materials", force: true do |t|
     t.string   "name"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20130525125534) do
   add_index "materials_projects", ["material_id", "project_id"], name: "index_materials_projects_on_material_id_and_project_id", unique: true
   add_index "materials_projects", ["project_id", "material_id"], name: "index_materials_projects_on_project_id_and_material_id", unique: true
 
-  create_table "media", force: true do |t|
+  create_table "media_objects", force: true do |t|
     t.string   "url"
     t.integer  "step_id"
     t.datetime "created_at"

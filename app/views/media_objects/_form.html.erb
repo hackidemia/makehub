@@ -1,10 +1,10 @@
-<%= form_for(@medium) do |f| %>
-  <% if @medium.errors.any? %>
+<%= form_for(@media_object) do |f| %>
+  <% if @media_object.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@medium.errors.count, "error") %> prohibited this medium from being saved:</h2>
+      <h2><%= pluralize(@media_object.errors.count, "error") %> prohibited this media object from being saved:</h2>
 
       <ul>
-      <% @medium.errors.full_messages.each do |msg| %>
+      <% @media_object.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
