@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */
+
+$white: #fff;
+
+.hck-new-project-link {
+	background-color: $white;
+}
