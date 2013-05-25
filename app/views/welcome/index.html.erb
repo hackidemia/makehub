@@ -7,30 +7,33 @@
 
 <div class="container hck-container">
   <section class="hck-newest-projects">
-    <h2>Latest Project Actions</h2>
-    <% @latest_projects.each do |project| %>
-      <% action = (project.created_at == project.updated_at) ? 'created' : 'updated' %>
-      <% user = project.user %>
-      <div>
-        <%= link_to project.name, project_path(project) %>
-        <%= action %> by
-        <%= link_to user.name, user_path(user) %>
-      </div>
-
-      <div>
-        <%= "#{user.name} has #{user.projects.size} projects" %>
-      </div>
-
-      <div>
-        <%= "Project description: #{project.description}" %>
-      </div>
-
-      <% if action == "updated" %>
-        <div>
-          <%= "Number of steps: #{project.steps.size}" %>
-        </div>
+    <h2>Latest Project Activity</h2>
+    <div class="row">
+      <% @latest_projects.each do |project| %>
+        <article class="span4">
+          <% action = (project.created_at == project.updated_at) ? 'created' : 'updated' %>
+          <% user = project.user %>
+          <p>
+            <strong>
+              <%= link_to project.name, project_path(project) %>
+            </strong>
+            <% if action == "updated" %>
+              <em>
+                - <%= "#{project.steps.size}" %> steps
+              </em>
+            <% end %>
+            <br>
+            <small>
+              <%= action %> by
+              <%= link_to user.name, user_path(user) %>
+              (<%= "#{user.projects.size}" %> projects)
+            </small>
+          </p>
+          <p>
+            <%= "#{project.description}" %>
+          </p>
+        </article>
       <% end %>
-      <br>
-    <% end %>
+    </div>
   </section>
 </div>
