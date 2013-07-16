@@ -10,7 +10,7 @@
     </p>
 
     <p class="description">
-      <%= @project.description %>
+      <%= markdownify(@project.description).html_safe %>
     </p>
   </section>
 
@@ -19,7 +19,7 @@
       <% @project.steps.each_with_index do |step, index| %>
         <li>
           <span class="step-number"><%= index + 1 %></span>
-          <%= step.content %>
+          <%= markdownify(step.content).html_safe %>
         </li>
       <% end %>
     </ol>

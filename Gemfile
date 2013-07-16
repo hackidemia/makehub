@@ -38,6 +38,9 @@ end
 # Use unicorn as the app server
 # gem 'unicorn'
 
+# Use redcarpet to render markdown
+gem 'redcarpet'
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 

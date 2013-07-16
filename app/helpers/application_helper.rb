@@ -10,5 +10,11 @@ module ApplicationHelper
 	  content_tag(:li, :class => "#{html_opts[:class]} #{active}") do
 	    link_to link_text, link_path
 	  end
-	end
+  end
+
+  def markdownify(content)
+  	@@markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
+  	@@markdown.render(content)
+  end
+
 end
