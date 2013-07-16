@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
   belongs_to :user, inverse_of: :projects, touch: true
+  belongs_to :parent, :class_name => 'Project'
   has_many :steps, inverse_of: :project, dependent: :destroy
   has_and_belongs_to_many :materials
 
@@ -16,6 +17,7 @@ class Project < ActiveRecord::Base
     new_project = self.dup
     new_project.user_id      = new_user_id
     new_project.material_ids = material_ids
+    new_project.parent = self
     new_project.save
 
     new_steps = steps.to_a.map(&:dup).each do |step|
