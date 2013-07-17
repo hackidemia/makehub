@@ -1,35 +1,37 @@
-<h1>Listing media objects</h1>
+<div class="container">
+  <h1>Listing media objects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Url</th>
-      <th>Image Url</th>
-      <th>Snippet</th>
-      <th>Step</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @media_objects.each do |media_object| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= media_object.name %></td>
-        <td><%= media_object.url %></td>
-        <td><%= media_object.image_url %></td>
-        <td><%= media_object.snippet %></td>
-        <td><%= media_object.step_id %></td>
-        <td><%= link_to 'Show', media_object %></td>
-        <td><%= link_to 'Edit', edit_media_object_path(media_object) %></td>
-        <td><%= link_to 'Destroy', media_object, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Url</th>
+        <th>Image Url</th>
+        <th>Snippet</th>
+        <th>Step</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @media_objects.each do |media_object| %>
+        <tr>
+          <td><%= media_object.name %></td>
+          <td><%= media_object.url %></td>
+          <td><%= media_object.image_url %></td>
+          <td><%= media_object.snippet %></td>
+          <td><%= media_object.step_id %></td>
+          <td><%= link_to 'Show', media_object %></td>
+          <td><%= link_to 'Edit', edit_media_object_path(media_object) %></td>
+          <td><%= link_to 'Destroy', media_object, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Media Object', new_media_object_path %>
+  <br>
+
+  <%= link_to 'New Media Object', new_media_object_path %>
+</div>

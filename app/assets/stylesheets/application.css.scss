@@ -1,0 +1,92 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+
+$white: #fff;
+$green: green;
+$grey: #777;
+$darkGrey: #333;
+
+$fontSizeNormal: 1em;
+$fontSizeSmall: .75em;
+
+
+.hck-new-project-link {
+  background-color: $white;
+}
+
+.hck-container {
+  min-height: 50em;
+  padding-top: 2.5em;
+}
+
+.hck-masthead {
+  color: $white;
+  background: $green url() 0 0 no-repeat;
+}
+
+.hck-jumbotron {
+  background: url(http://lorempixel.com/1600/400/technics/4/) 0 0 no-repeat;
+  background-size: cover;
+  height: 400px;
+  padding-top: 50px;
+  text-align: center;
+  text-shadow: 0px 2px 3px $grey;
+
+  h1 {
+    font-size: 120px;
+    line-height: 140px;
+  }
+
+  p {
+    font-size: $fontSizeNormal * 3;
+  }
+}
+
+.hck-mastfoot {
+  background-color: $grey;
+  color: $white;
+  font-size: $fontSizeSmall;
+  height: 8em;
+  margin-top: 2.5em;
+  padding-top: 3em;
+  text-align: center;
+}
+
+.project-meta {
+  margin-bottom: 1.5em;
+}
+
+.project-steps ol {
+  list-style: none;
+  margin: 0;
+}
+
+.project-steps li {
+  position: relative;
+  width: 18em;
+  min-height: 3em;
+  padding: 1em 1em 1em 2.75em;
+  background: #EEE;
+  margin-bottom: 1.25em;
+}
+
+.project-steps .step-number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 3em;
+  font-weight: bold;
+}

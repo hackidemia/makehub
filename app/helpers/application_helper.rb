@@ -1,6 +1,20 @@
 module ApplicationHelper
   def signed_in?
     # check for ID because we always have a current user
-    current_user.id.present?
+    current_user && current_user.id.present?
   end
+
+  def nav_link(link_text, link_path, html_opts = {})
+	  active = current_page?(link_path) ? 'active' : ''
+
+	  content_tag(:li, :class => "#{html_opts[:class]} #{active}") do
+	    link_to link_text, link_path
+	  end
+  end
+
+  def markdownify(content)
+  	@@markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
+  	@@markdown.render(content)
+  end
+
 end

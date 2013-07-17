@@ -1,31 +1,33 @@
-<h1>Listing materials</h1>
+<div class="container">
+  <h1>Listing materials</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Url</th>
-      <th>Photo url</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @materials.each do |material| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= material.name %></td>
-        <td><%= material.url %></td>
-        <td><%= material.photo_url %></td>
-        <td><%= link_to 'Show', project_material_path(@project, material) %></td>
-        <td><%= link_to 'Edit', edit_project_material_path(@project, material) %></td>
-        <td><%= link_to 'Destroy', project_materials_path(@project, material), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Url</th>
+        <th>Photo url</th>
+        <th></th>
+        <th></th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @materials.each do |material| %>
+        <tr>
+          <td><%= material.name %></td>
+          <td><%= material.url %></td>
+          <td><%= material.photo_url %></td>
+          <td><%= link_to 'Show', project_material_path(@project, material) %></td>
+          <td><%= link_to 'Edit', edit_project_material_path(@project, material) %></td>
+          <td><%= link_to 'Destroy', project_materials_path(@project, material), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Material', new_project_material_path(@project) %>
+  <br>
+
+  <%= link_to 'New Material', new_project_material_path(@project) %>
+</div>

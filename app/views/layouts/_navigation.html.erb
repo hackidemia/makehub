@@ -9,30 +9,24 @@
       <%= link_to "Makehub", root_path, :class => 'brand' %>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Explore <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li class="nav-header">Nav header</li>
-              <li><a href="#">Separated link</a></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
+          <%= nav_link 'Explore', projects_path %>
         </ul>
         <ul class="nav pull-right">
-          <li><a href="#contact">My Labs</a></li>
+          <%= nav_link 'Add New Project', new_project_path, class: "hck-new-project-link" %>
           <% if signed_in? %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> <%= current_user.name %> <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">My Account</a></li>
-              <li class="divider"></li>
-              <li><%= link_to "Log Out", signout_path, method: :delete %></li>
-            </ul>
-          </li>
+            <%= nav_link 'My Labs', user_projects_path(current_user) %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <i class="icon-user icon-white"></i>
+                <%= current_user.name %>
+                <i class="caret"></i>
+              </a>
+              <ul class="dropdown-menu">
+                <%= nav_link "My Account", user_path(current_user) %>
+                <li class="divider"></li>
+                <li><%= link_to "Log Out", signout_path, method: :delete %></li>
+              </ul>
+            </li>
           <% else %>
             <li><%= link_to "Sign in with Google", "/auth/google_oauth2" %></li>
           <% end %>

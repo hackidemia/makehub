@@ -1,19 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+  <h1><%= @project.name %></h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+  <section class="project-meta">
+    <p class="author">
+      <strong>Created by:</strong>
+      <%= @project.user.name %>
+    </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @project.user_id %>
-</p>
+    <p class="description">
+      <%= markdownify(@project.description).html_safe %>
+    </p>
+  </section>
 
-<%= link_to 'Edit', edit_project_path(@project) if can_update?(@project) %> |
-<%= link_to 'Back', projects_path %>
+  <section class="project-steps">
+    <ol>
+      <% @project.steps.each_with_index do |step, index| %>
+        <li>
+          <span class="step-number"><%= index + 1 %></span>
+          <%= markdownify(step.content).html_safe %>
+        </li>
+      <% end %>
+    </ol>
+  </section>
+
+  <%= link_to 'Edit', edit_project_path(@project) if can_update?(@project) %> |
+  <%= link_to 'Back', projects_path %>
+</div>
