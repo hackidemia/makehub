@@ -1,3 +1,3 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-provider :google_oauth2, ENV["378442845121.apps.googleusercontent.com"] || '', ENV["6IemnKWDSgvjKe_iMJqzMK4S"] || ''
+provider :google_oauth2, ENV["227438588534.apps.googleusercontent.com"] || '', ENV["GTJlU4O_r5PNHLU9ZSuGrMzh"] || '' { access_type: "offline", approval_prompt: "" }
 end
