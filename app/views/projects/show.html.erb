@@ -2,6 +2,7 @@
   <p id="notice"><%= notice %></p>
 
   <h1><%= @project.name %></h1>
+  <% if @project.parent %>forked from <%= link_to(@project.parent) do %><%= @project.parent.user.name %>'s <%= @project.parent.name %>  <% end %><% end %>
 
   <section class="project-meta">
     <p class="author">
