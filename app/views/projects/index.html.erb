@@ -17,17 +17,9 @@
     <tbody>
       <% @projects.each do |project| %>
         <tr>
-<<<<<<< HEAD
           <td><%= project.name %></td>
           <td><%= markdownify(project.description).html_safe%></td>
           <td><%= project.user_id %></td>
-=======
-          <td><%= link_to project.name, project %>
-            <% if project.parent %><br/> forked from <%= link_to(project.parent) do %><%= project.parent.user.name %>'s <%= project.parent.name %>  <% end %><% end %>
-          </td>
-          <td><%= project.description %></td>
-          <td><%= project.user.name %></td>
->>>>>>> 5a0a67814db7f8fc6c998a98254044d3bcc1ac42
           <td><%= link_to 'Show', project if can_read?(project) %></td>
           <td><%= link_to 'Edit', edit_project_path(project) if can_update?(project) %></td>
           <td><%= link_to 'Fork', fork_project_path(project), method: :post, data: { confirm: 'Are you sure?' } if can_fork?(project) %></td>
