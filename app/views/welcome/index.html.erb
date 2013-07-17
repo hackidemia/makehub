@@ -1,2 +1,39 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<header class="hck-masthead hck-jumbotron">
+  <div class="container">
+    <h1>Makehub</h1>
+    <p>It's like github. But for makers.</p>
+  </div><!-- Put a logo here. -->
+</header>
+
+<div class="container hck-container">
+  <section class="hck-newest-projects">
+    <h2>Latest Project Activity</h2>
+    <div class="row">
+      <% @latest_projects.each do |project| %>
+        <article class="span4">
+          <% action = (project.created_at == project.updated_at) ? 'created' : 'updated' %>
+          <% user = project.user %>
+          <p>
+            <strong>
+              <%= link_to project.name, project_path(project) %>
+            </strong>
+            <% if action == "updated" %>
+              <em>
+                - <%= "#{project.steps.size}" %> steps
+              </em>
+            <% end %>
+            <br>
+            <small>
+              <%= action %> by
+              <%= link_to user.name, user_path(user) %>
+              (<%= "#{user.projects.size}" %> projects)
+            </small>
+          </p>
+          <p>
+            <%= "#{project.description}" %>
+          </p>
+        </article>
+      <% end %>
+    </div>
+  </section>
+</div>

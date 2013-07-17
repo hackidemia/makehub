@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @step.name %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @step.name %>
+  </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @step.content %>
-</p>
+  <p>
+    <strong>Content:</strong>
+    <%= @step.content %>
+  </p>
 
-<p>
-  <strong>Project:</strong>
-  <%= @step.project_id %>
-</p>
+  <p>
+    <strong>Project:</strong>
+    <%= @step.project_id %>
+  </p>
 
-<%= link_to 'Edit', edit_project_step_path(@project, @step) if can_update?(@step) %> |
-<%= link_to 'Back', project_steps_path(@project) %>
+  <%= link_to 'Edit', edit_project_step_path(@project, @step) if can_update?(@step) %> |
+  <%= link_to 'Back', project_steps_path(@project) %>
+</div>
