@@ -18,7 +18,6 @@
       <% @projects.each do |project| %>
         <tr>
           <td><%= project.name %></td>
-          <td><%= markdownify(project.description).html_safe%></td>
           <td><%= project.user_id %></td>
           <td><%= link_to 'Show', project if can_read?(project) %></td>
           <td><%= link_to 'Edit', edit_project_path(project) if can_update?(project) %></td>
