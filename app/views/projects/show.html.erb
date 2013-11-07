@@ -1,28 +1,74 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
 
+  <p class="project_actions">
+    <%= fork_btn_for(@project) %>
+  </p>
+
   <h1><%= @project.name %></h1>
   <% if @project.parent %>forked from <%= link_to(@project.parent) do %><%= @project.parent.user.name %>'s <%= @project.parent.name %>  <% end %><% end %>
 
   <section class="project-meta">
-    <p class="author">
-      <strong>Created by:</strong>
-      <%= @project.user.name %>
+    <div class="row">
+      <div class="span4">
+        <p class="author">
+          <strong>Created by:</strong>
+          <%= @project.user.name %>
+        </p>
+        <p class="last_edited">
+          <strong>Last edited:</strong>
+          <%= @project.updated_at.to_formatted_s(:short) %>
+        </p>
+        <% if @project.duration %>
+          <p class="duration">
+            <strong>Duration:</strong>
+            <%= @project.duration %>
+          </p>
+        <% end %>
+      </div>
+      <div class="span4">
+        <% if @project.price %>
+          <p class="price">
+            <strong>Price:</strong>
+            <%= @project.price %>
+          </p>
+        <% end %>
+        <% if @project.skills %>
+          <p class="skills">
+            <strong>Skills:</strong>
+            <%= @project.skills %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <% if @project.steps %>
+    <section class="project-steps">
+      <div class="row">
+        <ol class="span3">
+          <% @project.steps.each_with_index do |step, index| %>
+            <li>
+              <%= link_to project_step_path(@project, step) do %>
+                <%= markdownify(step.name).html_safe %>
+              <% end %>
+            </li>
+          <% end %>
+        </ol>
+        <div class="step_info span9">
+          <div class="content">
+            <%= markdownify(@project.steps.first.content).html_safe %>
+          </div>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <% if @project.license %>
+    <p class="license span12">
+      <strong>License:</strong>
+      <%= link_to @project.license, 'https://creativecommons.org/licenses/' %>
     </p>
-
-  </section>
-
-  <section class="project-steps">
-    <ol>
-      <% @project.steps.each_with_index do |step, index| %>
-        <li>
-          <span class="step-number"><%= index + 1 %></span>
-          <%= markdownify(step.content).html_safe %>
-        </li>
-      <% end %>
-    </ol>
-  </section>
-
-  <%= link_to 'Edit', edit_project_path(@project) if can_update?(@project) %> |
-  <%= link_to 'Back', projects_path %>
+  <% end %>
+  <%= link_to 'Edit', edit_project_path(@project) if can_update?(@project) %>
 </div>
