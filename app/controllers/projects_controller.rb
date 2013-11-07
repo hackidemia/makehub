@@ -91,7 +91,9 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params['project']['skills'] = params['project']['skills'].reject(&:blank?).join(' ')
+      if params['project']['skills']
+        params['project']['skills'] = params['project']['skills'].reject(&:blank?).join(' ')
+      end
       params.require(:project).permit(:name, :skills, :license, :duration, :price)
     end
 end
