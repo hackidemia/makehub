@@ -4,9 +4,12 @@ project:
     - 1 hour
     - more than 1 hour
   license:
-    - license 1
-    - license 2
-    - license 3
+    - CC Attribution
+    - CC Attribution-NoDerivs
+    - CC Attribution-NonCommercial-ShareAlike
+    - CC Attribution-ShareAlike
+    - CC Attribution-NonCommercial
+    - CC Attribution-NonCommercial-NoDerivs
   price:
     - "< 10€"
     - "10€ - 20€"
