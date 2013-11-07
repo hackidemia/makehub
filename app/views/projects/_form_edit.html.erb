@@ -5,17 +5,12 @@
     <%= f.text_field :name %>
   </div>
   <div class="btn-group">
-    <%= f.select :skills, APPCONFIG['project']['skills'].map { |s| [s, s] },
-      { prompt: 'Skills' }, { multiple: 'multiple', class: 'span2' } %>
-
-    <%= f.select :duration, APPCONFIG['project']['duration'].map { |d| [d, d] },
-      { prompt: 'Duration' }, { class: 'span2' } %>
+    <%= select_for_project f, :skills, { multiple: 'multiple' } %>
+    <%= select_for_project f, :duration %>
   </div>
   <div class="btn-group">
-    <%= f.select :price, APPCONFIG['project']['price'].map { |p| [p, p] },
-      { prompt: 'Price' }, { class: 'span2' } %>
-    <%= f.select :license, APPCONFIG['project']['license'].map { |l| [l,l] },
-      { prompt: 'License' }, { class: 'span2' } %>
+    <%= select_for_project f, :price %>
+    <%= select_for_project f, :license %>
   </div>
   <div class="actions">
     <%= f.submit 'Save', :class => 'btn btn-primary' %>
