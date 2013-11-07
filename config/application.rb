@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+APPCONFIG = YAML.load(File.read(File.expand_path('../config.yml', __FILE__)))
+
 module Makehub
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

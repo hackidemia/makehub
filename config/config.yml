@@ -1,0 +1,20 @@
+project:
+  duration:
+    - less than 30min
+    - 1 hour
+    - more than 1 hour
+  licenses:
+    - license 1
+    - license 2
+    - license 3
+  price:
+    - "< 10€"
+    - "10€ - 20€"
+    - "> 20€"
+  skills:
+    - crafting
+    - programming
+    - design
+    - electronics
+    - science
+    - fixing
