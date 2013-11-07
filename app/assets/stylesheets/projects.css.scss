@@ -1,3 +1,19 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.step_info {
+  border: 2px solid #000;
+  height: 400px;
+  margin-left: 0;
+  .content {
+    padding: 10px;
+  }
+}
+
+.license {
+  margin: 10px;
+  text-align: center;
+}
+
+.project_actions { text-align: right; }

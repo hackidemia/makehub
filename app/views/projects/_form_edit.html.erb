@@ -1,0 +1,18 @@
+<%= form_for(@project) do |f| %>
+  <%= render 'form_errors' %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="btn-group">
+    <%= select_for_project f, :skills, { multiple: 'multiple' } %>
+    <%= select_for_project f, :duration %>
+  </div>
+  <div class="btn-group">
+    <%= select_for_project f, :price %>
+    <%= select_for_project f, :license %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Save', :class => 'btn btn-primary' %>
+  </div>
+<% end %>

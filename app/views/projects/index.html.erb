@@ -18,11 +18,10 @@
       <% @projects.each do |project| %>
         <tr>
           <td><%= project.name %></td>
-          <td><%= markdownify(project.description).html_safe%></td>
           <td><%= project.user_id %></td>
           <td><%= link_to 'Show', project if can_read?(project) %></td>
           <td><%= link_to 'Edit', edit_project_path(project) if can_update?(project) %></td>
-          <td><%= link_to 'Fork', fork_project_path(project), method: :post, data: { confirm: 'Are you sure?' } if can_fork?(project) %></td>
+          <td><%= fork_btn_for(project) %></td>
           <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } if can_delete?(project) %></td>
         </tr>
       <% end %>

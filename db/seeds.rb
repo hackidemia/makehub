@@ -14,8 +14,7 @@ user = User.where(
 ).first_or_create
 
 project = user.projects.create(
-  name: 'Robot-duino',
-  description: 'Create your own robot, with the power of arduino.'
+  name: 'Robot-duino'
 )
 
 materials = project.materials.create([
@@ -55,8 +54,7 @@ user2 = User.where(
 ).first_or_create
 
 project2 = user2.projects.create(
-  name: 'Raspberry-Car',
-  description: 'Create your own car, with the power of raspberry pi.'
+  name: 'Raspberry-Car'
 )
 
 materials2 = project2.materials.create([
