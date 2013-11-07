@@ -3,7 +3,7 @@ project:
     - less than 30min
     - 1 hour
     - more than 1 hour
-  licenses:
+  license:
     - license 1
     - license 2
     - license 3

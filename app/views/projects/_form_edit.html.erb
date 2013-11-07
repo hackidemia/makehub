@@ -1,0 +1,23 @@
+<%= form_for(@project) do |f| %>
+  <%= render 'form_errors' %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="btn-group">
+    <%= f.select :skills, APPCONFIG['project']['skills'].map { |s| [s, s] },
+      { prompt: 'Skills' }, { multiple: 'multiple', class: 'span2' } %>
+
+    <%= f.select :duration, APPCONFIG['project']['duration'].map { |d| [d, d] },
+      { prompt: 'Duration' }, { class: 'span2' } %>
+  </div>
+  <div class="btn-group">
+    <%= f.select :price, APPCONFIG['project']['price'].map { |p| [p, p] },
+      { prompt: 'Price' }, { class: 'span2' } %>
+    <%= f.select :license, APPCONFIG['project']['license'].map { |l| [l,l] },
+      { prompt: 'License' }, { class: 'span2' } %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Save', :class => 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@ class Project < ActiveRecord::Base
 
   validates_presence_of :name, :user_id
   validates_inclusion_of :duration, in: APPCONFIG['project']['duration'], allow_blank: true
-  validates :license, inclusion: { in: APPCONFIG['project']['licenses'] }, allow_blank: true
+  validates :license, inclusion: { in: APPCONFIG['project']['license'] }, allow_blank: true
   validates :price, inclusion: { in: APPCONFIG['project']['price'] }, allow_blank: true
   validate do
     return unless self.skills
