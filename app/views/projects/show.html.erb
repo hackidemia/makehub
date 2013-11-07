@@ -57,7 +57,11 @@
         </ol>
         <div class="step_info span9">
           <div class="content">
-            <%= markdownify(@project.steps.first.content).html_safe %>
+            <% if @step %>
+              <%= markdownify(@step.content).html_safe %>
+            <% else %>
+              <%= markdownify(@project.steps.first.content).html_safe %>
+            <% end %>
           </div>
         </div>
       </div>

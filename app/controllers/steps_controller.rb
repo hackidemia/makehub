@@ -11,6 +11,7 @@ class StepsController < ApplicationController
   # GET /steps/1
   # GET /steps/1.json
   def show
+    render 'projects/show'
   end
 
   # GET /steps/new
