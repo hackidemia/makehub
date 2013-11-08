@@ -69,6 +69,7 @@ class MediaObjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def media_object_params
-      params.require(:media_object).permit(:name, :url, :image_url, :snippet, :step_id)
+      #params.require(:media_object).permit(:name, :url, :image, :image_url, :snippet, :step_id)
+      params.require(:media_object).permit(:name, :image, :step_id)
     end
 end

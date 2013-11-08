@@ -7,18 +7,7 @@
   </p>
 
   <p>
-    <strong>Url:</strong>
-    <%= @media_object.url %>
-  </p>
-
-  <p>
-    <strong>Image Url:</strong>
-    <%= @media_object.image_url %>
-  </p>
-
-  <p>
-    <strong>Snippet:</strong>
-    <%= @media_object.snippet %>
+    <%= image_tag @media_object.image.url(:thumb) %>
   </p>
 
   <p>

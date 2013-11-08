@@ -54,3 +54,7 @@ gem "omniauth-google-oauth2"
 # we use authority to limit what a user can do, kind of like CanCan.
 # https://github.com/nathanl/authority
 gem 'authority'
+
+# For file uploading to AWS S3
+gem 'paperclip'
+gem 'aws-sdk'
