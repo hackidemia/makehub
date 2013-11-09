@@ -1,0 +1,37 @@
+<% editable = editable || false %>
+<section class="project-steps">
+  <div class="row">
+    <ol class="span3 steps_nav">
+      <% if editable %>
+        <li><%= link_to 'Howto', edit_project_path(@project) %></li>
+      <% end %>
+      <% @project.steps.each_with_index do |step, index| %>
+        <%= nav_for(@project, step, editable) %>
+      <% end %>
+      <% if editable %>
+        <li>
+          <%= link_to new_project_step_path(@project) do %>
+            <i class="icon-plus"></i>
+          <% end %>
+        </li>
+      <% end %>
+    </ol>
+    <div class="step_content span9">
+      <div class="content">
+        <% if editable %>
+          <% if @step %>
+            <%= render 'step_form' %>
+          <% else %>
+            <%= render 'add_step_instructions' %>
+          <% end %>
+        <% else %>
+          <% if @step %>
+            <%= markdownify(@step.content).html_safe %>
+          <% else %>
+            <%= markdownify(@project.steps.first.content).html_safe %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,6 +1,9 @@
 <div class="container">
   <h1>Editing project</h1>
 
-  <%= render 'form_edit' %>
+  <%= render 'edit_project_form' %>
 
+  <%= render 'project_steps', :editable => true %>
+
+  <%= link_to 'See how other users see this project', project_path(@project) %>
 </div>
