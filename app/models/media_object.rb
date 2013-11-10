@@ -1,5 +1,5 @@
 class MediaObject < ActiveRecord::Base
-  belongs_to :step
+  belongs_to :step, inverse_of: :media_objects
 
   has_attached_file :image, styles: APPCONFIG['media_object']['styles'].symbolize_keys
 

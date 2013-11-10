@@ -4,10 +4,10 @@
 
 .step_content {
   border: 2px solid #000;
-  height: 400px;
+  min-height: 400px;
   margin-left: 0;
   .content {
-    padding: 10px;
+    padding: 0 10px 0 15px;
   }
 }
 
