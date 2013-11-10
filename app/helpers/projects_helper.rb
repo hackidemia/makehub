@@ -10,7 +10,7 @@ module ProjectsHelper
     link_to 'Fork', fork_project_path(project), method: :post, class: 'btn btn-primary', data: { confirm: 'Are you sure?' } if can_fork?(project)
   end
 
-  def nav_for(project, step, editable)
+  def step_nav_link_for(project, step, editable)
     return if step.new_record?
     content_tag :li do
       if editable

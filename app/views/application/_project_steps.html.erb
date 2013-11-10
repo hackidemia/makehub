@@ -6,7 +6,7 @@
         <li><%= link_to 'Howto', edit_project_path(@project) %></li>
       <% end %>
       <% @project.steps.each_with_index do |step, index| %>
-        <%= nav_for(@project, step, editable) %>
+        <%= step_nav_link_for(@project, step, editable) %>
       <% end %>
       <% if editable %>
         <li>
