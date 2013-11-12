@@ -1571,6 +1571,7 @@ input[type="checkbox"][readonly] {
   border-color: #468847;
 }
 
+
 .control-group.info .control-label,
 .control-group.info .help-block,
 .control-group.info .help-inline {
@@ -4424,6 +4425,7 @@ input[type="submit"].btn.btn-mini {
   color: #777777;
 }
 
+
 .navbar-link {
   color: #777777;
 }
@@ -4807,7 +4809,26 @@ input[type="submit"].btn.btn-mini {
 }
 
 .navbar-inverse .brand {
-  color: #999999;
+  color: #A91246;
+	font-weight: bold;
+	font-size: 32px;
+	margin-top: 25px;
+}
+
+.account_sign_in a {
+	margin-top: 30px;
+}
+
+.build_learn_make {
+	padding-top: 30px;
+  padding-bottom: 50px;
+	font-size: 40px;
+}
+
+
+.maker_projects_headline {
+  font-size: 70px
+	
 }
 
 .navbar-inverse .navbar-text {
