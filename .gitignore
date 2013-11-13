@@ -17,6 +17,5 @@
 
 *.sublime-project
 *.sublime-workspace
-Gemfile.lock
 # File with secrets
 config/application.yml
