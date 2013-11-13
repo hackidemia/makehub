@@ -7,7 +7,7 @@ module ProjectsHelper
   end
 
   def fork_btn_for(project, html_params={})
-    html_params.merge( method: :post, data: { confirm: 'Are you sure?' } )
+    html_params.merge!( method: :post, data: { confirm: 'Are you sure?' } )
     link_to('Fork', fork_project_path(project), html_params) if can_fork?(project)
   end
 
