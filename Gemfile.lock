@@ -34,6 +34,8 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4, < 1.6.0)
       uuidtools (~> 2.1)
+    bootstrap-sass (2.3.2.0)
+      sass (~> 3.2)
     builder (3.1.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -156,6 +158,7 @@ PLATFORMS
 DEPENDENCIES
   authority
   aws-sdk
+  bootstrap-sass (= 2.3.2.0)
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.0.1)
   jquery-rails
