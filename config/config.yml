@@ -21,3 +21,13 @@ project:
     - electronics
     - science
     - fixing
+
+media_object:
+  styles:
+    thumb: '100x100>'
+    square: '200x200#'
+    medium: '300x300>'
+  image_size_in_mb: 4
+  image_valid_content_types:
+    - 'image/jpeg'
+    - 'image/png'

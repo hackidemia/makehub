@@ -43,30 +43,7 @@
     </div>
   </section>
 
-  <% if @project.steps.count > 0 %>
-    <section class="project-steps">
-      <div class="row">
-        <ol class="span3">
-          <% @project.steps.each_with_index do |step, index| %>
-            <li>
-              <%= link_to project_step_path(@project, step) do %>
-                <%= markdownify(step.name).html_safe %>
-              <% end %>
-            </li>
-          <% end %>
-        </ol>
-        <div class="step_info span9">
-          <div class="content">
-            <% if @step %>
-              <%= markdownify(@step.content).html_safe %>
-            <% else %>
-              <%= markdownify(@project.steps.first.content).html_safe %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </section>
-  <% end %>
+  <%= render 'project_steps' if @project.has_steps? %>
 
   <% if @project.license %>
     <p class="license span12">

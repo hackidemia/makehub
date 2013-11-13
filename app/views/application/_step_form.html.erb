@@ -19,6 +19,13 @@
     <%= f.label :content %>
     <%= f.text_area :content %>
   </div>
+  <% if @step.media_objects.count > 0 %>
+    <h5>Images</h5>
+    <%= f.fields_for :media_objects do |mo_f| %>
+      <%= render 'media_object_fields', f: mo_f %>
+    <% end %>
+  <% end %>
+  <%= link_to_add_fields "Add image", f, :media_objects %>
   <div class="actions">
     <%= f.submit 'Submit', :class => 'btn btn-primary' %>
   </div>

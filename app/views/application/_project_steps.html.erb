@@ -1,0 +1,42 @@
+<% editable = editable || false %>
+<section class="project-steps">
+  <div class="row">
+    <ol class="span3 steps_nav">
+      <% if editable %>
+        <li><%= link_to 'Howto', edit_project_path(@project) %></li>
+      <% end %>
+      <% @project.steps.each_with_index do |step, index| %>
+        <%= step_nav_link_for(@project, step, editable) %>
+      <% end %>
+      <% if editable %>
+        <li>
+          <%= link_to new_project_step_path(@project) do %>
+            <i class="icon-plus"></i>
+          <% end %>
+        </li>
+      <% end %>
+    </ol>
+    <div class="step_content span9">
+      <div class="content">
+        <% if editable %>
+          <% if @step %>
+            <%= render 'step_form' %>
+          <% else %>
+            <%= render 'add_step_instructions' %>
+          <% end %>
+        <% else %>
+          <% step = @step || @project.steps.first %>
+          <h3><%= step.name %></h3>
+          <% step.media_objects.each_with_index do |media_object, i| %>
+            <% if i == 0 %>
+              <%= image_tag media_object.image.url(:medium) %>
+            <% else %>
+              <%= image_tag media_object.image.url(:thumb) %>
+            <% end %>
+          <% end%>
+          <p><%= markdownify(step.content).html_safe %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

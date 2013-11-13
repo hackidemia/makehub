@@ -1,0 +1,11 @@
+<div class="media_object row-fluid">
+  <div class="span8">
+    <%= f.label :name, 'Caption' %>
+    <%= f.text_field :name %>
+    <%= f.label :image%>
+    <%= f.file_field :image%>
+  </div>
+  <div class="span4">
+    <%= image_tag f.object.image.url(:thumb) %>
+  </div>
+</div>

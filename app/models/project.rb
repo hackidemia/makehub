@@ -37,4 +37,8 @@ class Project < ActiveRecord::Base
 
     new_project
   end
+
+  def has_steps?
+    self.steps.count > 0
+  end
 end

@@ -18,10 +18,12 @@ class StepsController < ApplicationController
   def new
     @step = @project.steps.new
     authorize_action_for(@step)
+    render 'projects/edit'
   end
 
   # GET /steps/1/edit
   def edit
+    render 'projects/edit'
   end
 
   # POST /steps
@@ -34,7 +36,7 @@ class StepsController < ApplicationController
     respond_to do |format|
       if @step.save
         @project.save
-        format.html { redirect_to project_step_path(@project, @step), notice: 'Step was successfully created.' }
+        format.html { redirect_to edit_project_step_path(@project, @step), notice: 'Step was successfully created.' }
         format.json { render action: 'show', status: :created, location: @step }
       else
         format.html { render action: 'new' }
@@ -48,7 +50,7 @@ class StepsController < ApplicationController
   def update
     respond_to do |format|
       if @step.update(step_params)
-        format.html { redirect_to project_step_path(@project, @step), notice: 'Step was successfully updated.' }
+        format.html { redirect_to edit_project_step_path(@project, @step), notice: 'Step was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -79,6 +81,6 @@ class StepsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def step_params
-      params.require(:step).permit(:name, :content)
+      params.require(:step).permit(:name, :content, media_objects_attributes: [:name, :image, :id])
     end
 end

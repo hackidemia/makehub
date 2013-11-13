@@ -18,6 +18,9 @@ From your development environment
 
 If you're running in production you need to set the environment variables "GOOGLE_KEY" and "GOOGLE_SECRET", for the Google OAuth login.
 
+## Upload of images to AWS S3
+Don't forget to set the parameters in config/application.yml
+
 ## Contributing
 
 1. Fork it

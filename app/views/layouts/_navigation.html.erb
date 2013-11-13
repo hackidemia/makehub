@@ -12,8 +12,8 @@
           <%= nav_link 'Explore', projects_path %>
         </ul>
         <ul class="nav pull-right">
-          <%= nav_link 'Add New Project', new_project_path, class: "hck-new-project-link" %>
           <% if signed_in? %>
+            <%= nav_link 'Add New Project', new_project_path, class: "hck-new-project-link" %>
             <%= nav_link 'My Labs', user_projects_path(current_user) %>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">

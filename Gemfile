@@ -63,3 +63,7 @@ group :production do
   gem 'pg'
   gem 'rails_serve_static_assets'
 end
+
+# For file uploading to AWS S3
+gem 'paperclip'
+gem 'aws-sdk'
