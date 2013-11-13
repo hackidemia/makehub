@@ -29,18 +29,22 @@ materials = project.materials.create([
 steps = project.steps.create([
   {
     name: 'Step 1',
+    position: 0,
     content: 'Prepare the arduino.'
   },
   {
     name: 'Step 2',
+    position: 1,
     content: 'Put the arduino inside the robot.'
   },
   {
     name: 'Step 3',
+    position: 2,
     content: 'Write the software'
   },
   {
     name: 'Step 4',
+    position: 3,
     content: 'PROFIT'
   },
 ])
@@ -69,18 +73,22 @@ materials2 = project2.materials.create([
 step2s = project2.steps.create([
   {
     name: 'Step 1',
+    position: 0,
     content: 'Arduino the Prepar.'
   },
   {
     name: 'Step 2',
+    position: 1,
     content: 'Robot the Lorem Ipsum..'
   },
   {
     name: 'Step 3',
+    position: 2,
     content: 'Hack the matrix'
   },
   {
     name: 'Step 4',
+    position: 3,
     content: 'PROFITssss!!'
   },
 ])

@@ -5,7 +5,7 @@
       <% if editable %>
         <li><%= link_to 'Howto', edit_project_path(@project) %></li>
       <% end %>
-      <% @project.steps.each_with_index do |step, index| %>
+      <% @project.steps.order(:position).each_with_index do |step, index| %>
         <%= step_nav_link_for(@project, step, editable) %>
       <% end %>
       <% if editable %>

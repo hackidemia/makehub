@@ -41,4 +41,8 @@ class Project < ActiveRecord::Base
   def has_steps?
     self.steps.count > 0
   end
+
+  def number_of_steps
+    self.steps.count
+  end
 end
