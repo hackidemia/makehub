@@ -7,7 +7,9 @@ require 'rails/all'
 Bundler.require(:default, Rails.env)
 
 APPCONFIG = YAML.load(File.read(File.expand_path('../config.yml', __FILE__)))
-ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
+if Rails.env == 'development'
+  ENV.update YAML.load(File.read(File.expand_path('../application.yml', __FILE__)))
+end
 
 module Makehub
   class Application < Rails::Application
