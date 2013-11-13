@@ -2,7 +2,9 @@
   <p id="notice"><%= notice %></p>
 
   <p class="project_actions">
-    <%= fork_btn_for(@project) %>
+    <% btn_class = "btn #{'btn-primary' unless can_update?(@project)}" %>
+    <%= fork_btn_for(@project, class: btn_class) %>
+    <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-primary' if can_update?(@project) %>
   </p>
 
   <h1><%= @project.name %></h1>
@@ -51,5 +53,4 @@
       <%= link_to @project.license, 'https://creativecommons.org/licenses/' %>
     </p>
   <% end %>
-  <%= link_to 'Edit', edit_project_path(@project) if can_update?(@project) %>
 </div>

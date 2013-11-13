@@ -6,8 +6,9 @@ module ProjectsHelper
       { prompt: attr.to_s.capitalize }, html_params)
   end
 
-  def fork_btn_for(project)
-    link_to 'Fork', fork_project_path(project), method: :post, class: 'btn btn-primary', data: { confirm: 'Are you sure?' } if can_fork?(project)
+  def fork_btn_for(project, html_params={})
+    html_params.merge( method: :post, data: { confirm: 'Are you sure?' } )
+    link_to('Fork', fork_project_path(project), html_params) if can_fork?(project)
   end
 
   def step_nav_link_for(project, step, editable)
