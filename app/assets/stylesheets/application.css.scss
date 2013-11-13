@@ -22,6 +22,33 @@ $fontSizeNormal: 1em;
 $fontSizeSmall: .75em;
 
 
+.navbar.makehub-nav .navbar-inner {
+  color: #BA1057;
+  background-image: none;
+  background-color: #040E2B;
+  height: 88px;
+  .brand {
+    color: #A91246;
+    font-weight: bold;
+    font-size: 32px;
+    margin-top: 25px;
+  }
+}
+
+.account_sign_in a {
+  margin-top: 30px;
+}
+
+.build_learn_make {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  font-size: 40px;
+}
+
+.maker_projects_headline {
+  font-size: 70px
+}
+
 .hck-new-project-link {
   background-color: $white;
 }
@@ -37,7 +64,7 @@ $fontSizeSmall: .75em;
 }
 
 .hck-jumbotron {
-  background: url(http://lorempixel.com/1600/400/technics/4/) 0 0 no-repeat;
+  background: url(Project_Mercur.jpg) 0 0 no-repeat;
   background-size: cover;
   height: 400px;
   padding-top: 50px;
@@ -45,7 +72,7 @@ $fontSizeSmall: .75em;
   text-shadow: 0px 2px 3px $grey;
 
   h1 {
-    font-size: 120px;
+    font-size: 110px;
     line-height: 140px;
   }
 
@@ -80,3 +107,5 @@ $fontSizeSmall: .75em;
   background: #EEE;
   margin-bottom: 3px;
 }
+
+

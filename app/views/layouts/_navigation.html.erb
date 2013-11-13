@@ -1,4 +1,4 @@
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-fixed-top makehub-nav">
   <div class="navbar-inner">
     <div class="container">
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -9,7 +9,6 @@
       <%= link_to "Makehub", root_path, :class => 'brand' %>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          <%= nav_link 'Explore', projects_path %>
         </ul>
         <ul class="nav pull-right">
           <% if signed_in? %>
@@ -28,7 +27,7 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Sign in with Google", "/auth/google_oauth2" %></li>
+            <li class='account_sign_in'><%= link_to "Account", "/auth/google_oauth2" %></li>
           <% end %>
         </ul>
       </div><!--/.nav-collapse -->
