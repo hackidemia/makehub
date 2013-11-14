@@ -15,11 +15,12 @@
     <%= f.submit 'save step', :class => 'btn btn-primary' %>
   </div>
   <div class="field">
-    <%= f.label :name, "Title -- Step #{f.object.position + 1}" %>
+    <% step_label = "-- Step #{(f.object.position + 1)}" unless f.object.new_record? %>
+    <%= f.label :name, "Title #{step_label}" %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :content, "Instructions -- Step #{f.object.position + 1}" %>
+    <%= f.label :content, "Instructions #{step_label}" %>
     <%= f.text_area :content, rows: 5 %>
   </div>
   <% if @step.media_objects.count > 0 %>
