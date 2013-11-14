@@ -11,43 +11,35 @@
  *= require_self
  *= require_tree .
  */
+
+@import "_default_vars";
+
+// Bootstrap variables
+$navbarBackground: $darkBlue;
+$navbarBackgroundHighlight: $darkBlue;
+$navbarLinkColor: $primary;
+$navbarLinkColorHover: $primary;
+$navbarLinkColorActive: $primary;
+$navbarLinkBackgroundActive: $darkBlue;
+$navbarBrandColor: $brandColor;
+
 @import "bootstrap";
 @import "bootstrap-responsive";
 
-$white: #fff;
-$green: green;
-$grey: #777;
-$darkGrey: #333;
-
-$fontSizeNormal: 1em;
-$fontSizeSmall: .75em;
-
-
 .navbar.makehub-nav .navbar-inner {
-  color: #BA1057;
-  background-image: none;
-  background-color: #040E2B;
-  height: 88px;
+  padding-top: $headerPadding;
   .brand {
-    color: #A91246;
     font-weight: bold;
     font-size: 32px;
-    margin-top: 25px;
+    position: relative;
+    bottom: 23px;
   }
 }
 
+.main-container { margin-top: $headerPadding; }
+
 .account_sign_in a {
   margin-top: 30px;
-}
-
-.build_learn_make {
-  padding-top: 30px;
-  padding-bottom: 50px;
-  font-size: 40px;
-}
-
-.maker_projects_headline {
-  font-size: 70px
 }
 
 .hck-new-project-link {
@@ -62,24 +54,6 @@ $fontSizeSmall: .75em;
 .hck-masthead {
   color: $white;
   background: $green url() 0 0 no-repeat;
-}
-
-.hck-jumbotron {
-  background: url(Project_Mercur.jpg) 0 0 no-repeat;
-  background-size: cover;
-  height: 400px;
-  padding-top: 50px;
-  text-align: center;
-  text-shadow: 0px 2px 3px $grey;
-
-  h1 {
-    font-size: 110px;
-    line-height: 140px;
-  }
-
-  p {
-    font-size: $fontSizeNormal * 3;
-  }
 }
 
 .hck-mastfoot {
@@ -108,5 +82,3 @@ $fontSizeSmall: .75em;
   background: #EEE;
   margin-bottom: 3px;
 }
-
-

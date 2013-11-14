@@ -1,3 +1,32 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "_default_vars";
+
+.build_learn_make {
+  padding-top: 30px;
+  padding-bottom: 50px;
+  font-size: 40px;
+}
+
+.maker_projects_headline {
+  font-size: 70px
+}
+
+.hck-jumbotron {
+  background: url(Project_Mercur.jpg) 0 0 no-repeat;
+  background-size: cover;
+  height: 400px;
+  padding-top: 50px;
+  text-align: center;
+  text-shadow: 0px 2px 3px $grey;
+
+  h1 {
+    font-size: 110px;
+    line-height: 140px;
+  }
+
+  p {
+    font-size: $fontSizeNormal * 3;
+  }
+}

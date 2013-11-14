@@ -2,25 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.step_content {
-  border: 2px solid #000;
-  min-height: 400px;
-  margin-left: 0;
-  .content {
-    padding: 0 10px 0 15px;
-  }
-}
-
 .license {
   margin: 10px;
   text-align: center;
 }
 
-.steps_nav {
-  a:link, a:visited, a:hover, a:active {
-    color: black;
-    text-decoration: none;
-  }
+.project_actions { text-align: right; }
+
+.project-meta {
+  margin-bottom: 1.5em;
 }
 
-.project_actions { text-align: right; }
+.project-steps {
+  ol.steps_nav {
+    list-style: none;
+    margin: 0;
+    a:link, a:visited, a:hover, a:active {
+      color: black;
+      text-decoration: none;
+    }
+    li {
+      position: relative;
+      min-height: 2em;
+      padding: 1em 1em 1em 2.75em;
+      background: #EEE;
+      margin-bottom: 3px;
+    }
+  }
+  .step_content {
+    border: 2px solid #000;
+    min-height: 400px;
+    margin-left: 0;
+    .content {
+      padding: 0 10px 0 15px;
+    }
+  }
+}
