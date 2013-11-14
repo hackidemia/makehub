@@ -11,22 +11,23 @@
     </div>
   <% end %>
 
+  <div class="actions">
+    <%= f.submit 'save step', :class => 'btn btn-primary' %>
+  </div>
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :name, "Title -- Step #{f.object.position + 1}" %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :content %>
-    <%= f.text_area :content %>
+    <%= f.label :content, "Instructions -- Step #{f.object.position + 1}" %>
+    <%= f.text_area :content, rows: 5 %>
   </div>
   <% if @step.media_objects.count > 0 %>
-    <h5>Images</h5>
     <%= f.fields_for :media_objects do |mo_f| %>
       <%= render 'media_object_fields', f: mo_f %>
     <% end %>
+    <%= link_to_add_fields "Add another picture", f, :media_objects %>
+  <% else %>
+    <%= link_to_add_fields "Add picture", f, :media_objects %>
   <% end %>
-  <%= link_to_add_fields "Add image", f, :media_objects %>
-  <div class="actions">
-    <%= f.submit 'Submit', :class => 'btn btn-primary' %>
-  </div>
 <% end %>

@@ -2,11 +2,20 @@ $white: #fff;
 $green: green;
 $grey: #777;
 $darkGrey: #333;
-$darkBlue: #040E2B;
 $primary: #BA1057;
+$secondary: #040E2B;
+$btnPrimary: #2EE044;
 $brandColor: #A91246;
+
+$lightBackground: #F7F7F7;
 
 $fontSizeNormal: 1em;
 $fontSizeSmall: .75em;
 
 $headerPadding: 48px;
+
+@mixin border-box {
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}

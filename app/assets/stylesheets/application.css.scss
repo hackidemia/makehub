@@ -15,16 +15,34 @@
 @import "_default_vars";
 
 // Bootstrap variables
-$navbarBackground: $darkBlue;
-$navbarBackgroundHighlight: $darkBlue;
+$navbarBackground: $secondary;
+$navbarBackgroundHighlight: $secondary;
 $navbarLinkColor: $primary;
 $navbarLinkColorHover: $primary;
 $navbarLinkColorActive: $primary;
-$navbarLinkBackgroundActive: $darkBlue;
+$navbarLinkBackgroundActive: $secondary;
 $navbarBrandColor: $brandColor;
+
+$linkColor: $secondary;
+//$headingsColor: $primary;
+
+$baseBorderRadius: 0;
+$borderRadiusLarge: 0;
+$borderRadiusSmall: 0;
+
+$inputBackground: #E5E6EA;
+$placeholderText: #000;
+$inputBorder: transparent;
+$btnPrimaryBackground: $btnPrimary;
+$btnPrimaryBackgroundHightlight: $btnPrimary;
 
 @import "bootstrap";
 @import "bootstrap-responsive";
+
+.btn-primary.secondary-color {
+  background-color: $secondary;
+  background-image: none;
+}
 
 .navbar.makehub-nav .navbar-inner {
   padding-top: $headerPadding;
@@ -64,21 +82,4 @@ $navbarBrandColor: $brandColor;
   margin-top: 2.5em;
   padding-top: 3em;
   text-align: center;
-}
-
-.project-meta {
-  margin-bottom: 1.5em;
-}
-
-.project-steps ol {
-  list-style: none;
-  margin: 0;
-}
-
-.project-steps li {
-  position: relative;
-  min-height: 2em;
-  padding: 1em 1em 1em 2.75em;
-  background: #EEE;
-  margin-bottom: 3px;
 }

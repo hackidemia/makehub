@@ -1,9 +1,10 @@
-<div class="container">
-  <h1>Editing project</h1>
+<section class="project-meta">
+  <div class="container">
+    <%= render 'edit_project_form' %>
+  </div>
+</section>
 
-  <%= render 'edit_project_form' %>
+<div class="container">
 
   <%= render 'project_steps', :editable => true %>
-
-  <%= link_to 'See how other users see this project', project_path(@project) %>
 </div>

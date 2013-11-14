@@ -1,16 +1,11 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
-
-  <p class="project_actions">
-    <% btn_class = "btn #{'btn-primary' unless can_update?(@project)}" %>
-    <%= fork_btn_for(@project, class: btn_class) %>
-    <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-primary' if can_update?(@project) %>
-  </p>
-
   <h1><%= @project.name %></h1>
   <% if @project.parent %>forked from <%= link_to(@project.parent) do %><%= @project.parent.user.name %>'s <%= @project.parent.name %>  <% end %><% end %>
+</div>
 
-  <section class="project-meta">
+<section class="project-meta">
+  <div class="container">
     <div class="row">
       <div class="span4">
         <p class="author">
@@ -23,7 +18,7 @@
         </p>
         <% if @project.duration %>
           <p class="duration">
-            <strong>Duration:</strong>
+            <strong>Estimated time:</strong>
             <%= @project.duration %>
           </p>
         <% end %>
@@ -43,7 +38,16 @@
         <% end %>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<div class="container">
+  <p class="project_actions">
+    <% btn_class = "btn #{'btn-primary secondary-color' unless can_update?(@project)}" %>
+    <%= fork_btn_for(@project, class: btn_class) %>
+    <%= link_to 'edit', edit_project_path(@project), class: 'btn btn-primary secondary-color' if can_update?(@project) %>
+  </p>
+
 
   <%= render 'project_steps' if @project.has_steps? %>
 

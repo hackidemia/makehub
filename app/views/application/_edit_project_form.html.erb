@@ -1,18 +1,32 @@
 <%= form_for(@project) do |f| %>
   <%= render 'project_form_errors' %>
+  <div class="actions">
+    <%= f.submit 'save', :class => 'btn btn-primary' %>
+  </div>
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'xlarge' %>
+  <div class="field">
+    <div class="row">
+      <div class="span3">
+        <%= f.label :skills %>
+        <%= select_for_project f, :skills, {}, { multiple: 'multiple' } %>
+      </div>
+      <div class="span3">
+        <%= f.label :duration%>
+        <%= select_for_project f, :duration %>
+      </div>
+      <div class="span3">
+        <%= f.label :price%>
+        <%= select_for_project f, :price %>
+      </div>
+      <div class="span3">
+        <%= f.label :license%>
+        <%= select_for_project f, :license %>
+      </div>
+    </div>
   </div>
-  <div class="btn-group">
-    <%= select_for_project f, :skills, { multiple: 'multiple' } %>
-    <%= select_for_project f, :duration %>
-  </div>
-  <div class="btn-group">
-    <%= select_for_project f, :price %>
-    <%= select_for_project f, :license %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Save', :class => 'btn btn-primary' %>
+  <div class="actions see_project">
+    <%= link_to 'See how other users see this project', project_path(@project) %>
   </div>
 <% end %>

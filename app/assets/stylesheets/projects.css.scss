@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "_default_vars";
+
+label { color: $primary; font-weight: bold; }
+
 .license {
   margin: 10px;
   text-align: center;
@@ -10,31 +14,66 @@
 .project_actions { text-align: right; }
 
 .project-meta {
-  margin-bottom: 1.5em;
+  padding: 2em 0;
+  background-color: $lightBackground;
+  .actions {
+    float: right;
+    margin-right: 20px;
+  }
+  strong { color: $primary; margin-right: 0.25em; }
 }
 
 .project-steps {
   ol.steps_nav {
     list-style: none;
-    margin: 0;
-    a:link, a:visited, a:hover, a:active {
-      color: black;
-      text-decoration: none;
-    }
+    //margin-left: 0;
     li {
       position: relative;
       min-height: 2em;
       padding: 1em 1em 1em 2.75em;
-      background: #EEE;
       margin-bottom: 3px;
+      background: $darkGrey;
+      &.add_step {
+        background: $btnPrimary;
+        min-height: 1em;
+        max-height: 1em;
+        text-transform: uppercase;
+        i { margin-left: 1em; }
+      }
+    }
+    a:link, a:visited, a:hover, a:active {
+      text-decoration: none;
+      color: $white;
+    }
+    a.active li {
+      background: $primary;
     }
   }
   .step_content {
-    border: 2px solid #000;
     min-height: 400px;
     margin-left: 0;
     .content {
-      padding: 0 10px 0 15px;
+      padding: 30px 0 0 35px;
+      h3 { margin-top: -10px; }
+      .actions {
+        input {
+          padding: 0.3em 2.5em;
+          position: relative;
+          top: -40px;
+          float: right;
+        }
+      }
+      .field {
+        input { height: 2em; }
+        input, textarea {
+          width: 100%;
+          @include border-box;
+          box-shadow: none;
+        }
+      }
+    }
+    a {
+      font-weight: bold;
     }
   }
 }
