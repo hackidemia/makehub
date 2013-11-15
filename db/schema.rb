@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113172034) do
+ActiveRecord::Schema.define(version: 20131115201718) do
 
   create_table "materials", force: true do |t|
     t.string   "name"
@@ -30,13 +30,10 @@ ActiveRecord::Schema.define(version: 20131113172034) do
   add_index "materials_projects", ["project_id", "material_id"], name: "index_materials_projects_on_project_id_and_material_id", unique: true
 
   create_table "media_objects", force: true do |t|
-    t.string   "url"
     t.integer  "step_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.text     "snippet"
-    t.string   "image_url"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"

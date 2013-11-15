@@ -13,43 +13,43 @@ class MediaObjectsController < ApplicationController
   end
 
   # GET /media_objects/new
-  def new
-    @media_object = MediaObject.new
-  end
+  #def new
+    #@media_object = MediaObject.new
+  #end
 
   # GET /media_objects/1/edit
-  def edit
-  end
+  #def edit
+  #end
 
   # POST /media_objects
   # POST /media_objects.json
-  def create
-    @media_object = MediaObject.new(media_object_params)
+  #def create
+    #@media_object = MediaObject.new(media_object_params)
 
-    respond_to do |format|
-      if @media_object.save
-        format.html { redirect_to @media_object, notice: 'MediaObject was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @media_object }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @media_object.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+    #respond_to do |format|
+      #if @media_object.save
+        #format.html { redirect_to @media_object, notice: 'MediaObject was successfully created.' }
+        #format.json { render action: 'show', status: :created, location: @media_object }
+      #else
+        #format.html { render action: 'new' }
+        #format.json { render json: @media_object.errors, status: :unprocessable_entity }
+      #end
+    #end
+  #end
 
   # PATCH/PUT /media_objects/1
   # PATCH/PUT /media_objects/1.json
-  def update
-    respond_to do |format|
-      if @media_object.update(media_object_params)
-        format.html { redirect_to @media_object, notice: 'MediaObject was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @media_object.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #def update
+    #respond_to do |format|
+      #if @media_object.update(media_object_params)
+        #format.html { redirect_to @media_object, notice: 'MediaObject was successfully updated.' }
+        #format.json { head :no_content }
+      #else
+        #format.html { render action: 'edit' }
+        #format.json { render json: @media_object.errors, status: :unprocessable_entity }
+      #end
+    #end
+  #end
 
   # DELETE /media_objects/1
   # DELETE /media_objects/1.json

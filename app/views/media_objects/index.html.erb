@@ -5,10 +5,8 @@
     <thead>
       <tr>
         <th>Name</th>
-        <th>Url</th>
-        <th>Image Url</th>
-        <th>Snippet</th>
         <th>Step</th>
+        <th>Image</th>
         <th></th>
         <th></th>
         <th></th>
@@ -19,19 +17,12 @@
       <% @media_objects.each do |media_object| %>
         <tr>
           <td><%= media_object.name %></td>
-          <td><%= media_object.url %></td>
-          <td><%= media_object.image_url %></td>
-          <td><%= media_object.snippet %></td>
           <td><%= media_object.step_id %></td>
+          <td><%= media_object.image.url %></td>
           <td><%= link_to 'Show', media_object %></td>
-          <td><%= link_to 'Edit', edit_media_object_path(media_object) %></td>
           <td><%= link_to 'Destroy', media_object, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-
-  <br>
-
-  <%= link_to 'New Media Object', new_media_object_path %>
 </div>
