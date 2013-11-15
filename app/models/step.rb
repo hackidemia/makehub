@@ -15,4 +15,12 @@ class Step < ActiveRecord::Base
   validates_presence_of :project_id, :name, :content, :position
   validates :position, numericality: { only_integer: true },
                        uniqueness: { scope: :project_id }
+
+  def fork(project_id)
+    new_step = self.dup
+    new_step.project_id = project_id
+    new_step.save
+
+    self.media_objects.to_a.map { |mo| mo.fork(new_step.id) }
+  end
 end

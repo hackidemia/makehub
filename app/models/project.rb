@@ -30,10 +30,7 @@ class Project < ActiveRecord::Base
     new_project.parent = self
     new_project.save
 
-    new_steps = steps.to_a.map(&:dup).each do |step|
-      step.project_id = new_project.id
-      step.save
-    end
+    steps.to_a.map { |s| s.fork(new_project.id) }
 
     new_project
   end

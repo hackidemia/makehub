@@ -8,4 +8,10 @@ class MediaObject < ActiveRecord::Base
   # Validates that the files uploaded are images
   # Before using this validation check which content types are needed for IE
   # validates_attachment_content_type :image, content_type: APPCONFIG['media_object']['image_valid_content_types']
+  def fork(step_id)
+    new_media_object = self.dup
+    new_media_object.step_id = step_id
+    new_media_object.image = self.image
+    new_media_object.save
+  end
 end
