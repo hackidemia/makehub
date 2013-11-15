@@ -8,8 +8,10 @@
       </a>
       <%= link_to "Makehub", root_path, :class => 'brand' %>
       <div class="nav-collapse collapse">
-        <ul class="nav pull-right">
+        <ul class="nav">
           <%= nav_link 'Explore', projects_path %>
+        </ul>
+        <ul class="nav pull-right">
           <% if signed_in? %>
             <%= nav_link 'Add New Project', new_project_path, class: "hck-new-project-link" %>
             <%= nav_link 'My Labs', user_projects_path(current_user) %>
