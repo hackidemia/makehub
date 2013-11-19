@@ -45,16 +45,16 @@ $btnPrimaryBackgroundHightlight: $btnPrimary;
 }
 
 .navbar.makehub-nav .navbar-inner {
-  padding-top: $headerPadding;
+  //padding-top: $headerPadding;
   .brand {
     font-weight: bold;
     font-size: 32px;
-    position: relative;
-    bottom: 23px;
+    //position: relative;
+    //bottom: 23px;
   }
 }
 
-.main-container { margin-top: $headerPadding; }
+//.main-container { margin-top: $headerPadding; }
 
 .account_sign_in a {
   margin-top: 30px;
